@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nectr - Real-time updates from your favorite local businesses</title>
+		<meta content="Use Nectr to receive location-based notifications from your favorite local businesses. Discounts, specials, sales and more from the businesses you love. " name="description" />
+		<meta content="iBeacon, Retail iBeacons, Restaurant iBeacon, Microlocation, local proximity marketing, iBeacons for my business, location-based marketing, Pittsburgh startups, in-store engagment for my business" name="keywords" />
+		<meta content="Nectr" name="author" />
+		<!-- css links -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css'>
+		<!--<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">-->
+		<!--<link rel="icon" href="images/favicon.ico" type="image/x-icon">-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Twitter Media Share -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@GoNectr">
+		<meta name="twitter:title" content="Nectr - Shop Local">
+		<meta name="twitter:description" content="Receive real-time deals and updates from the local businesses you love.">
+		<meta name="twitter:creator" content="@GoNectr">
+
+		<meta name="twitter:image" content="http://gonectr.com/img/fbog.png">
+
+		<!-- Open Graph data -->
+		<meta property="og:title" content="Nectr - Shop Local" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://www.GoNectr.com/" />
+		<meta property="og:image" content="http://gonectr.com/img/fbog.png" />
+		<meta property="og:description" content="Receive real-time deals and updates from the local businesses you love." /> 
+		<meta property="og:site_name" content="Nectr - Shop Local" />
+
+		<!-- Google Analytics Integration Basic -->
+		<script>
+  			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  			ga('create', 'UA-60624823-1', 'auto');
+  			ga('send', 'pageview');
+		</script>
+<script>
+/* number submit by veteranlk */
+  
+  function topfff(){
+  	
+  	var phone= $("input#topPhone").val();
+	var dataString = 'number='+ phone;
+	  $.ajax({
+	    type: "POST",
+	    url: "thankyou.php",
+	    data: dataString,
+	    success: function() {
+	      $('#topDiv').html("");
+	      $('#topDivSmall').html("<div id='message'></div>");
+	      $('#message').html("<h2>Thanks! We've sent a link to your phone.</h2>")
+	      .append("")
+	      .hide()
+	      .fadeIn(1500, function() {
+	        $('#message').append("");
+	      });
+	    }
+	  });
+	  return false;
+  }
+  
+  function bottomfff(){
+  	
+  	var phone= $("input#phoneNumberInputBlue").val();
+	var dataString = 'number='+ phone;
+	  $.ajax({
+	    type: "POST",
+	    url: "thankyou.php",
+	    data: dataString,
+	    success: function() {
+	      $('#bottomDiv').html("<h3>Awesome! A text is on it's way from the Nectr team. Let us know if you have any questions. </h3>")
+	      .append("")
+	      .hide()
+	      .fadeIn(1500, function() {
+	        $('#message').append("");
+	      });
+	    }
+	  });
+	  return false;
+  }
+  
+    $("#topSend").click(function() {
+	/* var validator = $("#topForm").validate(options);
+	if (!validator.form()) {
+	    return false;
+	} */
+      var phone= $("input#topPhone").val();
+	var dataString = 'number='+'+'+phone;
+	  //alert (dataString);return false;
+	  $.ajax({
+	    type: "POST",
+	    url: "thankyou.php",
+	    data: dataString,
+	    success: function() {
+	    	alert('test');
+	      $('#topDiv').html("");
+	      $('#topDivSmall').html("<div id='message'></div>");
+	      $('#message').html("<h2>Thanks! We've sent a link to your phone.</h2>")
+	      .append("")
+	      .hide()
+	      .fadeIn(1500, function() {
+	        $('#message').append("");
+	      });
+	    }
+	  });
+	  return false;
+    });
+
+</script>
+	</head>
+	<body>
+
+
+		<!-- ===================
+		       HEADER AREA
+		 ==================== -->
+
+
+		<div class = 'container-fluid headerContentArea'>
+			<!-- Header Content Container -->
+			<div class = 'container'>
+				<!-- Business Link -->
+				<div class="row nectrBizLink">
+					<a class="col-sm-2" href="">
+						<h1> >> <u>Nectr for Business</u></h1>
+					</a>
+					<!-- Nectr Logo -->
+					<img class="col-xs-12 col-sm-2 col-sm-offset-8" src="images/nectrLogo.svg">
+				</div>
+				<!-- Customer Links -->
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 introChat">
+						<h2>Your favorite businesses on one application</h2>
+						<img src="images/shopLocal.svg">
+						<h4 class="hidden-xs" id="topDivSmall">Get a link for Nectr sent to your phone</h4>
+					</div>
+				</div>
+				<!-- ===================
+					SUBSCRIBE FORM 
+				==================== -->
+				<div class="row hidden-xs">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-4" id="topDiv">
+						<div class="row">
+							<form id="topForm"  class='ajaxform'>
+							<div class="phoneBox col-sm-6">
+								<span class="hashBlue">+</span>
+								
+								<input id="topPhone" style="width:80%" class="phoneNumber" name="quantity" title="Use international format" type="text" pattern="[0-9]{11}" required placeholder="Enter your cell number"> 
+							</div>	
+							<button class="subButton col-sm-2" id="topSend" onClick="topfff();return false;">
+								Text Me
+							</button>
+							</form>
+						</div>	
+					</div>
+				</div>			
+
+				<!-- App Buttons Desktop -->
+				<div class="row hidden-xs">
+					<div class="appRow topAppRow">
+						<div class="appRowDownloads col-sm-offset-6">
+							<span>Available on: </span>
+							<a href="http://bit.ly/nectrandroidmain">
+								<img src="images/logoDroid.svg">
+							</a>
+							<a href="http://bit.ly/iosnectrmain">
+								<img src="images/logoApple.svg">
+							</a>
+						</div>
+					</div>
+				</div>
+				<!-- App Buttons Mobile -->
+				<div class="row appRow visible-xs">
+					<a href="http://bit.ly/iosnectrmain">
+						<img class="dlButton" src="images/buttonApple.png">
+					</a>
+					<a href="http://bit.ly/nectrandroidmain">
+						<img class="dlButton" src="images/buttonGoogle.png">
+					</a>
+				</div>
+
+			</div>
+		</div>
+		<!-- =================== 
+		    BULLET POINT AREA
+		=================== -->
+		<div class="container">
+			<div class="row">
+				<center>
+					<h1 class="col-sm-4 col-sm-offset-4 bulletHeadline">How Does Nectr Work?</h1>
+				</center>
+			</div>
+			<!-- TEMP Icons Section -->
+			<div class="row iconRow">
+				<div class="iconSlot col-sm-3">
+					<img class="testGray" src="images/bulletIcon.png" alt="TEMP">
+					<div class="textArea">
+						<h4>Explore your city</h4>
+						<p>Nectr list's the businesses in your city on one mobile application. Now there is truly one app for your entire community.</p>
+					</div>
+				</div>
+				<div class="iconSlot col-sm-3 col-sm-offset-1">
+					<img class="" src="images/bulletIcon2.png" alt="TEMP">
+					<div class="textArea">
+						<h4>Follow your favorite businesses</h4>
+						<p>The businesses you follow can keep you in the loop with what's happening at their business.</p>
+					</div>
+				</div>
+				<div class="iconSlot col-sm-3 col-sm-offset-1">
+					<img class="" src="images/bulletIcon3.png" alt="TEMP">
+					<div class="textArea">
+						<h4>Real-time deals and updates</h4>
+						<p>Just go about your daily life and receive push notification updates when something new is happening at the businesses you love.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ======================
+			PHONE SCREEN AREA XS
+		======================= -->
+		<div class="container visible-xs">
+			<div class="row">
+				<img class="col-xs-8 col-xs-offset-2" src="images/screenCap2.png" alt="NectrPhoneScreenCap">
+			</div>
+			<div class="row xsCaptionHeader">
+				<h2 class="col-xs-8 col-xs-offset-2">Every Business Every Update</h2>
+			</div>
+			<div class="row xsCaptionContent">
+				<p class="col-xs-8 col-xs-offset-2">Check the feed tab where every update from every business in your area is conveniently displayed.</p>
+			</div>
+		</div>
+		<!-- ======================
+			PHONE SCREEN AREA 
+		======================= -->
+		<div class="container hideme hidden-xs">
+			<div class="row">
+				<!--Caption-->
+				<div class="col-sm-4 col-sm-offset-5" id="cap1">
+					<img class="col-sm-3" src="images/archDot.png" alt="pointer" id="pointerLeft">
+					<div class="col-sm-9 capText">
+						<h2 class="col-sm-12" id="captionHeader">Every Business Every Update</h2>
+						<p id="captionContent">Check the feed tab where every update from every business in your area is conveniently displayed.</p>
+					</div>
+					<img class="col-sm-3" src="images/archDotFlip.png" alt="pointer" id="pointerRight">
+				</div>
+			</div>
+			<!--Phone Screen Caps-->
+			<div class="row phoneSection"> <!-- hideme -->
+				<div class="col-sm-3 phoneShotsing">
+					<img class="phoneScrnCap phScrnGry photo1" src="images/screenCap1.png" alt="TEMP">
+				</div>
+				<div class="col-sm-3 phoneShotsing">
+					<img class="phoneScrnCap phScrnGry photo2" id="initSelect" src="images/screenCap2.png" alt="TEMP">
+				</div>
+				<div class="col-sm-3 phoneShotsing">
+					<img class="phoneScrnCap phScrnGry photo3" src="images/screenCap3.png" alt="TEMP">
+				</div>
+				<div class="col-sm-3 phoneShotsing">
+					<img class="phoneScrnCap phScrnGry photo4" src="images/screenCap4.png" alt="TEMP">
+				</div>
+			</div>
+		</div>
+		<!-- ======================
+		    NECTR BLUE AREA 
+		======================= -->
+		<!--
+			<div class="container-fluid blueArea hidden-xs">
+				<div class="container">
+					<div class="row blueAreaContent">
+		-->
+						<!--Nectr Icon-->
+		<!--
+						<img class="col-sm-3 col-sm-offset-1" src="images/nectrIcon.png" alt="Nectr Icon">
+		-->
+						<!--Call to Action info-->
+		<!--
+						<div class="col-sm-8 callToAct">
+							<h3>Save money at the places you already visit.</h3>
+		-->
+							<!-- BLUE TEXT INPUT -->
+		<!--
+							<div class="row hidden-xs bluePhoneInputArea">
+								<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+								 <form id="bottomForm"  class='ajaxform'>
+									<div class="row" id="bottomDiv">
+										<div class="phoneBox noBorder col-sm-8">
+											<span class="hashBlueBottom">+</span>
+											<input class="phoneNumber" id="phoneNumberInputBlue" name="quantity" title="Use international format" type="text" pattern="[0-9]{11}" >
+										</div>	
+										<button class="subButtonBlue noBorder col-sm-4" onClick="bottomfff();return false;">
+											Text Me
+										</button>
+									</div>	
+								</form>
+								</div>
+							</div>			
+
+							<div class="row">
+								<a class="" href="http://bit.ly/iosnectrmain">
+									<img class="dlButton" src="images/buttonApple.png">
+								</a>
+								<a class="" href="http://bit.ly/nectrandroidmain">
+									<img class="dlButton" src="images/buttonGoogle.png">
+								</a>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		-->
+		<!-- ======================
+			 LIVE IN BURG 
+		======================  -->
+		<div class="container">
+			<div class="row">
+				<center>
+					<h1 class="bulletHeadlineBottom">We are live in the Burgh.</h1>
+				</center>
+			</div>
+			<div class="row pittImages">
+				<div class="col-sm-4">
+					<img class="cityImages" src="images/pittStreet.png" alt="TEMP">
+				</div>
+				<div class="col-sm-4">
+					<img class="cityImages" src="images/shadyStreet.png" alt="TEMP">
+				</div>
+				<div class="col-sm-4">
+					<img class="cityImages" src="images/eastStreet.png" alt="TEMP">
+				</div>
+			</div>
+
+			<!-- REAL APP BUTTONS -->
+			<div class="row appRow">
+				<a href="http://bit.ly/iosnectrmain">
+					<img class="dlButton" src="images/buttonApple.png">
+				</a>
+				<a href="http://bit.ly/nectrandroidmain">
+					<img class="dlButton" src="images/buttonGoogle.png">
+				</a>
+			</div>
+
+			<div class="row bulletHeadline">
+				<div class="hidden-xs col-sm-12 sponBizTemp">
+					<img src="images/client1.png">
+					<img src="images/client2.png">
+					<img src="images/client3.png">
+					<img src="images/client4.png">
+					<img src="images/client5.png">
+					<img src="images/client6.gif">
+				</div>
+			</div>
+		</div>
+
+		<!-- ================= 
+				FOOTER
+		================= -->
+		<div class="container-fluid footer">
+			<div class="container">
+				<div class="row postCredits">
+					<img class="col-sm-1 subIcon" src="images/nectrIcon.png" alt="Nectr Icon">
+					<p class="col-sm-5 col-sm-offset-3 nectrCopyright">Copyright 2015 - Nectr, Inc. Made in Pittsburgh, PA  @GoNectr</p>
+					
+					<div class="socialMediaRow col-sm-2 col-sm-offset-1">
+						<a href="">
+							<img class="socialMediaIcons" src="images/twitterSocial.svg">
+						</a>
+						<a href="">
+							<img class="socialMediaIcons" src="images/facebookSocial.svg">
+						</a>
+						<a href="">
+							<img class="socialMediaIcons" src="images/instagramSocial.svg">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- SCRIPT LINKS -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

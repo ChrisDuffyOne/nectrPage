@@ -1,0 +1,440 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* Font definition */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* // GLOBAL CSS // */
+@font-face{
+	font-family: 'nexaLight';
+	src: url('../font/nexaLight.ttf');
+}
+@font-face{
+	font-family: 'nexaBold';
+	src: url('../font/nexaBold.ttf');
+}
+
+/* /// XS SCREEN SIZE /// */
+@media only screen and (min-width: 0px) {
+	/* ====================
+		Header Content Area 
+	 ===================== */
+	.headerContentArea{
+		background-color:#3a4f64;
+		background-image: url('../images/beerFunHeader.png');
+		background-size: cover;
+	}
+	.introChat{
+		color:white;
+		text-align: center;
+	}
+	.introChat h2{
+		font-family: 'nexaLight';
+		font-size:2em;
+		/*margin-bottom: 10px;*/
+	}
+	.introChat img{
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.introChat h3{
+		font-family: 'nexaBold';
+		font-size:1.35em;
+		margin-bottom: 50px;
+	}
+	.introChat h4{
+		font-family: 'nexaLight';
+		font-size:1em;
+		margin-bottom: 10px;
+	}
+	.nectrBizLink{
+		margin-top: 20px;
+		margin-bottom: 75px;
+	}
+	.nectrBizLink a{
+		font-family: 'nexaLight';
+		color:white;
+	}
+	.nectrBizLink img{
+		margin-top:30px;
+	}
+	/* -------------
+	 Subscribe Box 
+	------------- */
+	.phoneBox{
+		background-color: white;
+		border:solid;
+		border-right-width: 0; 
+		border-color:#ecf0f1;
+		min-height: 42px;
+
+		line-height: 24px;
+		border-top-left-radius:10px;
+		border-bottom-left-radius:10px;
+		vertical-align:initial;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	.phoneNumber{
+		border: none;
+		display: inline;
+	}
+	.phoneNumber:focus{
+    	outline: 0;
+	}
+	.hash{
+		float: left;
+		margin-right: 15px;
+	}
+	.subButton{
+		font-family: 'nexaLight';
+		border:solid;
+		border-left-width:0;
+		transition: background-color 0.5s ease;
+		background-color:#feb25c;
+		color: white;
+		min-height: 42px;
+		border-top-right-radius:10px;
+		border-bottom-right-radius:10px;
+	}
+	.subButton:hover{
+		background-color:#cf7013;
+	}
+	/* ----------------------
+	  App Download Buttons 
+	---------------------- */
+	.appRow{
+		margin-top: 15px;
+		margin-bottom: 75px;
+		text-align: center;
+	}
+	.appRow.topAppRow{
+		text-align:left;
+	}
+	.appRow span{
+		font-family: 'nexaLight';
+		color:white;
+	}
+	.appRowDownloads a img{
+		max-height: 30px;
+	}
+	.appButton{
+		background-color: black;
+		min-height: 2em;
+		border-radius: 1em;	
+	}
+	.dlButton{
+		min-width: 170px;
+	}
+
+	/* Bullet Headline Section */
+	.bulletHeadline{
+		font-family: 'nexaLight';
+		margin-top: 87px;
+		margin-bottom: 87px;
+		font-size:2em;
+	}
+	.iconRow{
+		margin-bottom: 50px;
+		padding-left: 100px;
+	}
+	/*.iconRow img{
+		max-height: 25px;
+	}*/
+
+	.iconSlot{
+		text-align: center;
+		margin-bottom: 100px; 
+	}
+	.iconSlot .textArea{
+		text-align: left;
+	}
+		/*Caption Head*/
+		.textArea h4{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: 'nexaLight';
+			font-weight: bold;
+			text-align: left;
+		}
+		/*Caption Subtext*/
+		.textArea p{
+			font-family: 'nexaLight';
+			text-align: justify;
+		}
+	/* =====================
+		Phone Image Caption 
+	 ===================== */
+	
+	/* ----------------------
+	  Fullscreen Size 
+	---------------------- */
+	.xsCaptionHeader{
+		font-family: 'nexaBold';
+		margin-top: 30px;
+	}
+	.xsCaptionContent{
+		font-family: 'nexaLight';
+	}
+
+	/* ----------------------
+	  Fullscreen Size 
+	---------------------- */
+	.hideme{
+    	opacity:0;
+    	margin-top: 50px;
+	}
+	.phScrnGry{
+		/*Chrome*/
+		-webkit-transition : -webkit-filter 250ms linear;
+		-webkit-filter: grayscale(1);
+		-webkit-transition: opacity .25s ease-in-out;
+		/*Firefox*/
+		-moz-transition : -webkit-filter 250ms linear;
+		filter: grayscale(1);
+		-moz-transition: opacity .25s ease-in-out;
+		opacity: 0.4;
+	}
+	.phScrnCol{
+		/*Chrome*/
+		-webkit-transition : -webkit-filter 250ms linear;
+		-webkit-filter: grayscale(0);
+		-webkit-transition: opacity .25s ease-in-out;
+		/*Firefox*/
+		-moz-transition : -webkit-filter 250ms linear;
+		filter: grayscale(0);
+		-moz-transition: opacity .25s ease-in-out;
+		opacity: 1;
+	}
+	.capText{
+		margin-bottom: 50px;
+	}
+	#pointerLeft{
+		margin-top: 50px;
+	}
+	#pointerRight{
+		margin-top: 50px;
+	}
+		/* Moving Caption */
+		#captionHeader{
+			font-family: 'nexaBold';
+			padding-left: 0;
+			margin-bottom: 10px;
+		}
+		#captionContent{
+			font-family: 'nexaLight';
+		}
+	/* Phone Image Section */
+	.phoneSection{
+		margin-bottom: 87px;
+	}
+	.phoneShotsing{
+		text-align: center;
+	}
+	.phoneScrnCap{
+		width:100%;
+	}
+	/* =====================
+		Blue Area Section 
+	 ===================== */
+	.blueArea{
+		background-color:#e8f0f2;
+	}
+	.blueAreaContent{
+		margin-top: 90px;
+		margin-bottom: 90px	
+	}
+	.blueAreaContent h3{
+		font-family: 'nexaLight';
+		font-size: 1.4em;
+	}
+	.callToAct{
+		padding-top: 80px;
+		text-align: center;
+	}
+	/* -------------------------
+		Blue area phone input
+	--------------------------- */
+	.bluePhoneInputArea{
+		margin-top:20px;
+		margin-bottom:20px;
+	}
+	.hashBlueBottom{
+		float:left;
+	}
+	#phoneNumberInputBlue{
+		width: 110px;
+		float: left;
+	}
+	.noBorder{
+		line-height: 30px;
+		border:none;
+	}
+	.subButtonBlue{
+		font-family: 'nexaLight';
+		/*border:solid;
+		border-left-width:0;*/
+		transition: background-color 0.5s ease;
+		background-color:#49a1ff;
+		color: white;
+		min-height: 42px;
+		border-top-right-radius:10px;
+		border-bottom-right-radius:10px;
+	}
+	.subButtonBlue:hover{
+		background-color:#2f78c7;
+	}
+	/* =====================
+	     Live in Burg 
+	===================== */
+	.bulletHeadlineBottom{
+		font-family: 'nexaLight';
+		margin-top: 160px;
+		margin-bottom: 80px;
+		font-size:3em;
+	}
+	.pittImages{
+		text-align:center;
+		margin-bottom: 87px;
+	}
+	.cityImages{
+		width:100%;
+	}
+	.sponsorRow{
+		
+	}
+	.sponBizTemp{
+		text-align: center;
+	}
+	.sponBizTemp img{
+		height:60px;
+		margin-left:15px;
+		margin-right:15px;
+	}
+
+	/* Footer */
+	.footer{
+		background-color:#f4f5f6;
+		font-family: sans-serif;
+		color: #95a5a6;
+	}
+	.postCredits{
+		margin: 10px 0 10px 0;
+	}
+	.subIcon{
+    	max-height:50px;
+    	width: auto;
+    	height: auto;
+	}
+	.nectrCopyright{
+		margin-top:15px;
+	}
+	.socialMediaRow{
+		margin-top: 13px;
+		text-align: right;
+	}
+	.socialMediaIcons{
+		height:20px;
+	}
+}
+/* /// SM SCREEN SIZE /// */
+@media only screen and (min-width: 768px) {
+	/* ----------------------
+	  Top Row Logo 
+	---------------------- */
+	.nectrBizLink{
+		margin-top: 50px;
+	}
+	.nectrBizLink img{
+		margin-top:0px;
+		margin-bottom:0px;
+	}
+	/* ----------------------
+	  App Download Buttons 
+	---------------------- */
+	.nectrBizLink{
+		margin-top: 50px;
+		margin-bottom: 200px;
+	}
+	.nectrBizLink a{
+		margin-top: 15px;
+	}
+	.iconSlot{
+		margin-bottom: 0px; 
+	}
+	.appRow{
+		margin-bottom: 150px;
+	}
+	/* =====================
+	     Live in Burg 
+	===================== */
+	.bulletHeadlineBottom{
+		margin-bottom: 160px;
+	}
+}
+/* /// MD SCREEN SIZE /// */
+@media only screen and (min-width: 992px) {
+	
+}
+/* /// LG SCREEN SIZE /// */
+@media only screen and (min-width: 1200px) {
+	
+}
+
+/*Junk Code
+
+GrayScale Filter Trial
+
+.phoneScrnCap{
+	-webkit-transition : -webkit-filter 500ms linear;
+	-webkit-filter: grayscale(1);
+}
+.phoneScrnCap:hover {
+	-webkit-transition : -webkit-filter 500ms linear;
+	-webkit-filter: grayscale(0);
+}
+
+*/
